@@ -1,5 +1,5 @@
 import type { ServerData } from "@/lib/types"
-import { ServerCard } from "@/components/server-card"
+import { ServerCard } from "@/app/components/server-card"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 

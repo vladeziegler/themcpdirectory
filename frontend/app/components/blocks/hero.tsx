@@ -3,8 +3,20 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/components/ui/button"
 import Link from "next/link"
+
+interface HeroProps {
+  className?: string;
+  gradient?: boolean;
+  blur?: boolean;
+  title: string;
+  subtitle?: string;
+  actions?: { label: string; href: string; variant?: "default" | "outline" }[];
+  titleClassName?: string;
+  subtitleClassName?: string;
+  actionsClassName?: string;
+}
 
 const Hero = React.forwardRef<HTMLElement, HeroProps>(
   (
