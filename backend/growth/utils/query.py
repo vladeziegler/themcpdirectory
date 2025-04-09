@@ -2,10 +2,8 @@ from llama_index.indices.managed.llama_cloud import LlamaCloudIndex
 # pip install llama-index-indices-managed-llama-cloud
 
 import os
-import dotenv
-
-dotenv.load_dotenv()
-
+from dotenv import load_dotenv
+load_dotenv()
 llama_cloud_api_key = os.getenv("LLAMA_CLOUD_API_KEY")
 
 index = LlamaCloudIndex(

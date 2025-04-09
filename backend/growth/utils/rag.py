@@ -134,19 +134,22 @@ from llama_index.indices.managed.llama_cloud import LlamaCloudIndex
 from pydantic import BaseModel
 import json
 
+
 # Load environment variables
+from dotenv import load_dotenv
+
 load_dotenv()
 
 # Initialize the OpenAI client
 client = OpenAI()
-
+LLAMA_CLOUD_API_KEY=os.getenv("LLAMA_CLOUD_API_KEY")
 # Initialize the LlamaCloudIndex
 index = LlamaCloudIndex(
     # name="frequent-primate-2025-04-08",
     name="elegant-hawk-2025-04-08",
     project_name="Default",
     organization_id="8e327feb-280a-4a46-abcb-67662f3a4522",
-    api_key=os.getenv("LLAMA_CLOUD_API_KEY")  # Ensure this key is set in your .env file
+    api_key=LLAMA_CLOUD_API_KEY  # Ensure this key is set in your .env file
 )
 
 class MCPServer(BaseModel):

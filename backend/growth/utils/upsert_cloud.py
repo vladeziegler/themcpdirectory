@@ -3,12 +3,13 @@ import pandas as pd
 from llama_cloud.client import LlamaCloud
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_cloud.types import CloudDocumentCreate, CloudPineconeVectorStore, CloudS3DataSource
+from dotenv import load_dotenv
 
-# Load environment variables
-LLAMACLOUD_API_KEY = os.getenv('LLAMA_CLOUD_API_KEY')
+load_dotenv()
+LLAMA_CLOUD_API_KEY=os.getenv("LLAMA_CLOUD_API_KEY")
 
 # Initialize LlamaCloud client
-client = LlamaCloud(token=LLAMACLOUD_API_KEY)
+client = LlamaCloud(token=LLAMA_CLOUD_API_KEY)
 
 # Define collection name and embedding model
 COLLECTION_NAME = 'elegant-hawk-2025-04-08'

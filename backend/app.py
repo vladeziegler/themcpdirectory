@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import sys
 from pathlib import Path
 from growth.utils.rag import search_mcp
-
+from growth.utils.query_index import create_and_upsert_index
 # Add the growth directory to Python path
 current_dir = Path(__file__).parent
 sys.path.append(str(current_dir))
@@ -67,7 +67,7 @@ def search():
             return jsonify({'error': 'Query is required'}), 400
 
         # Ensure index exists before searching
-        ensure_index_exists()
+        # ensure_index_exists()
 
         # Perform the search using the search_mcp function from rag.py
         results = search_mcp(query, top_k=top_k)
@@ -93,7 +93,7 @@ def get_recent_searches():
 def health_check():
     try:
         # Check if index exists or can be created
-        ensure_index_exists()
+        # ensure_index_exists()
         return jsonify({'status': 'healthy'}), 200
     except Exception as e:
         return jsonify({'status': 'unhealthy', 'error': str(e)}), 500
