@@ -5,3 +5,4 @@ python-dotenv==1.0.1
 llama-index-core==0.10.12
 llama-index-embeddings-openai==0.1.6 
 llama-index-indices-managed-llama-cloud
+llama-index
